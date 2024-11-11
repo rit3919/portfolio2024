@@ -7,15 +7,15 @@ const skills = [
     { name: 'C#', level: 'UnityC#として使用', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
     { name: 'JavaScript', level: 'このポートフォリオの作成に使用', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
     { name: 'C++', level: '', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
-    { name: 'Next.js', level: '', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
-    { name: 'React', level: '', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+    // { name: 'Next.js', level: '', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' }, //ちょっと不安なので消す。
+    // { name: 'React', level: '', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
 
 ];
 
 const Skills: React.FC = () => {
     return (
-        <Box sx={{ padding: '0 0 10vh 0' }}>
-            <Typography variant="h1" sx={{ display: 'block', textAlign: 'center', userSelect: 'none' }}>
+        <Box className="Skill" sx={{ padding: '0 0 20vh 0' }}>
+            <Typography variant="h1" sx={{ display: 'block', textAlign: 'center', userSelect: 'none', padding: '0 0 2vh 0' }}>
                 Skill
             </Typography>
             {/* <Card sx={{ position: 'absolute', left: '0', right: '0', margin: 'auto', width: '90vw' }}>
