@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 
 import Link from 'next/link';
@@ -15,11 +15,31 @@ const HeaderButton = {
 //     document.getElementById(props.wrap)[0]
 // }
 // Header
-function Header() {
+const Header: React.FC = () => {
 
-    useEffect(() => {
+    //各カテゴリーへのスクロール
+    const scrollAbout = () => {
 
-    });
+
+        document.getElementsByClassName("About")[0].scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
+    const scrollSkills = () => {
+
+
+        document.getElementsByClassName("Skill")[0].scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
+    const scrollWorks = () => {
+
+
+        document.getElementsByClassName("Works")[0].scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <AppBar color="primary">
             <Toolbar>
@@ -28,9 +48,9 @@ function Header() {
                     Rin Takagi Portfolio
                 </Typography>
 
-                <Button color="inherit" sx={HeaderButton}>About</Button>
-                <Button color="inherit" sx={HeaderButton}>Skill</Button>
-                <Button color="inherit" sx={HeaderButton}>Works</Button>
+                <Button color="inherit" sx={HeaderButton} onClick={scrollAbout}>About</Button>
+                <Button color="inherit" sx={HeaderButton} onClick={scrollSkills}>Skill</Button>
+                <Button color="inherit" sx={HeaderButton} onClick={scrollWorks}>Works</Button>
 
             </Toolbar>
         </AppBar >
