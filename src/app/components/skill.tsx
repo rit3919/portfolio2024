@@ -14,13 +14,13 @@ const skills = [
 
 const Skills: React.FC = () => {
     return (
-        <Box sx={{ padding: '7vh 0 0 0' }}>
+        <Box sx={{ padding: '0 0 10vh 0' }}>
             <Typography variant="h1" sx={{ display: 'block', textAlign: 'center', userSelect: 'none' }}>
                 Skill
             </Typography>
             {/* <Card sx={{ position: 'absolute', left: '0', right: '0', margin: 'auto', width: '90vw' }}>
                 <CardContent style={{ height: '100%', display: 'grid', placeItems: 'center' }}> */}
-            <Grid container spacing={4} justifyContent="center">
+            <Grid container spacing={4} justifyContent="center" sx={{ position: 'relative', left: '0', right: '0', margin: 'auto' }}>
                 {skills.map((skill, index) => (
                     <Grid key={index}>
                         <Card sx={{ width: '210px', height: '100px' }}>

@@ -4,9 +4,9 @@ import Grid from '@mui/material/Grid2';
 
 const About: React.FC = () => {
     return (
-        <Box sx={{ position: 'relative', top: '100vh' }}>
+        <Box sx={{ padding: '0 0 10vh 0' }}>
             <Typography variant="h1" sx={{ textAlign: 'center', userSelect: 'none' }}>About</Typography >
-            <Card sx={{ width: '80vw', position: 'absolute', left: '0', right: '0', margin: 'auto' }}>
+            <Card sx={{ width: '80vw', position: 'relative', left: '0', right: '0', margin: 'auto' }}>
                 <CardContent>
                     <Box className="Name">
                         <Typography variant='h4' sx={{ textAlign: 'center' }}>自己紹介</Typography>
