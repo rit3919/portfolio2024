@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Header from "./components/Header";
 import About from './components/About';
 import Skills from './components/skill';
+import Works from './components/works';
 
 
 // 色の設定
@@ -22,6 +23,8 @@ const theme = createTheme({
 });
 
 export default function Home() {
+
+    //ダークモードのロゴ変更
     const [isDark, setIsDark] = useState<boolean>(false);
 
     useEffect(() => {
@@ -38,7 +41,6 @@ export default function Home() {
         };
     }, []);
 
-
     return (
         <ThemeProvider theme={theme}>
             <Header />
@@ -52,6 +54,15 @@ export default function Home() {
             </Box>
             <About />
             <Skills />
+            <Works />
+            <footer className='Copyright'>
+
+                <Typography sx={{ display: 'block', textAlign: 'center', }}>&copy;2022-2025 Rin Takagi All rights reserved.</Typography>
+
+
+            </footer>
         </ThemeProvider >
     );
 }
+
+
