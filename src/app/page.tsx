@@ -2,9 +2,10 @@
 
 import { ThemeProvider } from "@emotion/react";
 import { createTheme } from '@mui/material/styles';
-import { Typography } from "@mui/material";
-import Header from "./Header";
-import About from './About';
+import { autocompleteClasses, Box, Typography } from "@mui/material";
+import Header from "./components/Header";
+import About from './components/About';
+import Skills from './components/skill';
 
 // 色の設定
 const theme = createTheme({
@@ -22,8 +23,11 @@ export default function Home() {
     return (
         <ThemeProvider theme={theme}>
             <Header />
-            <Typography variant='h1' className='mynameTitle' sx={{ userSelect: 'none', position: 'absolute', top: '10vh', left: '5vw' }}>Rin Takagi Portfolio</Typography>
+            <Box >
+                <Typography variant='h1' className='mynameTitle' sx={{ userSelect: 'none', position: 'absolute', top: '10vh' }}>Rin Takagi Portfolio</Typography>
+            </Box>
             <About />
+            <Skills />
         </ThemeProvider>
     );
 }
