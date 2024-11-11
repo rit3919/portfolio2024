@@ -1,11 +1,13 @@
 "use client";
-
+import { useEffect, useState } from 'react';
 import { ThemeProvider } from "@emotion/react";
 import { createTheme } from '@mui/material/styles';
 import { Box, Typography } from "@mui/material";
+import Image from 'next/image';
 import Header from "./components/Header";
 import About from './components/About';
 import Skills from './components/skill';
+
 
 // 色の設定
 const theme = createTheme({
@@ -20,11 +22,33 @@ const theme = createTheme({
 });
 
 export default function Home() {
+    const [isDark, setIsDark] = useState<boolean>(false);
+
+    useEffect(() => {
+        const darkmode = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const changeDarkModeImg = (event: MediaQueryListEvent) => {
+            setIsDark(event.matches);
+        };
+        setIsDark(darkmode.matches);
+
+        darkmode.addEventListener('change', changeDarkModeImg)
+        return () => {
+            darkmode.removeEventListener('change', changeDarkModeImg);
+        };
+    }, []);
+
+
     return (
         <ThemeProvider theme={theme}>
             <Header />
             <Box sx={{ padding: '0 0 10vh 0', position: 'relative', height: '100vh', top: '30vh' }}>
-                <Typography variant='h1' sx={{ userSelect: 'none', position: 'absolute', left: '3vw' }}>Rin Takagi Portfolio</Typography>
+                <Box sx={{ position: 'relative', left: '3vw' }}>
+                    <Image src={
+                        isDark ? "/image/Logo/Rit_Logo_dark.png" : "/image/Logo/Rit_Logo_light.png"
+                    } alt={isDark ? 'Dark Logo' : 'Light Logo'} width={300} height={150} style={{ pointerEvents: 'none', userSelect: 'none' }} />
+                </Box>
+                <Typography variant='h1' sx={{ userSelect: 'none', position: 'relative', left: '3vw' }}>Rin Takagi Portfolio</Typography>
             </Box>
             <About />
             <Skills />
