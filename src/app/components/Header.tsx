@@ -22,21 +22,24 @@ const Header: React.FC = () => {
 
 
         document.getElementsByClassName("About")[0].scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth',
+            block: 'center'
         });
     };
     const scrollSkills = () => {
 
 
         document.getElementsByClassName("Skill")[0].scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth',
+            block: 'center'
         });
     };
     const scrollWorks = () => {
 
 
         document.getElementsByClassName("Works")[0].scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth',
+            block: 'center'
         });
     };
 
