@@ -7,7 +7,7 @@ const About: React.FC = () => {
         <Box className="About" sx={{ padding: '0 0 20vh 0' }}>
             <Typography variant="h1" sx={{ textAlign: 'center', userSelect: 'none', padding: '0 0 2vh 0' }}>About</Typography >
             <Card sx={{ width: '80vw', position: 'relative', left: '0', right: '0', margin: 'auto' }}>
-                <CardContent>
+                <CardContent >
                     <Box className="Name">
                         <Typography variant='h4' sx={{ textAlign: 'center' }}>自己紹介</Typography>
                         <Typography>新しいことに目がない人間です．ゲーム制作やサーバー構築などエンジニア的な技術を中心に楽しいと思えることを自由にしています．Linuxやネットワーク周りを整備することが楽しく，仮想サーバやコンテナなどのインフラの勉強を始めました．</Typography>

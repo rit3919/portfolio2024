@@ -26,7 +26,6 @@ const Works: React.FC = () => {
                                     {work.name}
                                 </Typography>
 
-
                             </CardContent>
                         </Card>
                     </Grid>
