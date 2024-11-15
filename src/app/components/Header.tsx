@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 
-import Link from 'next/link';
 
 const HeaderButton = {
     fontSize: '2rem',
