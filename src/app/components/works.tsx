@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography, Box } from '@mui/material';
 import Grid from '@mui/material/Grid2';
+import WorkContent from './DialogTemplate';
 
 const works = [
     { name: 'PreSkate -仮想スケート体験システム-', level: '研究で使用', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
@@ -9,6 +10,14 @@ const works = [
 ];
 
 const Works: React.FC = () => {
+    const [open, setOpen] = React.useState(false);
+
+    const OpenHandler = () => {
+        setOpen(true);
+    }
+    const CloseHandler = () => {
+        setOpen(false);
+    }
     return (
         <Box className="Works" sx={{ padding: '0 0 20vh 0' }}>
             <Typography variant="h1" sx={{ display: 'block', textAlign: 'center', userSelect: 'none', padding: '0 0 2vh 0' }}>
@@ -19,15 +28,9 @@ const Works: React.FC = () => {
             <Grid container spacing={4} justifyContent="center" sx={{ position: 'relative', left: '0', right: '0', margin: 'auto' }}>
                 {works.map((work, index) => (
                     <Grid key={index}>
-                        <Card sx={{ width: '300px', height: '100px' }}>
-                            <CardContent>
-
-                                <Typography variant="h6" component="div">
-                                    {work.name}
-                                </Typography>
-
-                            </CardContent>
-                        </Card>
+                        <WorkContent title={work.name}>
+                            {work.level}
+                        </WorkContent>
                     </Grid>
                 ))
                 }
