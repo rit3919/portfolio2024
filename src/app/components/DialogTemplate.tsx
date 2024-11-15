@@ -3,28 +3,34 @@ import { Button, DialogTitle, DialogContent, } from '@mui/material';
 import Dialog from "@mui/material/Dialog";
 import Typography from '@mui/material/Typography';
 
-
-
 interface DialogProps {
-    open: boolean,
     title: string,
-    onClose: () => void,
-    body: string
+    color?: string,
+    children: React.ReactNode,//React18から明示的に指定する必要がある
 }
-const DialogTemplate: React.FC<DialogProps> = ({ open, title, onClose, body }) => {
 
+const DialogTemplate: React.FC<DialogProps> = ({ title, color, children }) => {
+    if (!color) {
+        color = 'secondary';
+    }
+    const [open, setOpen] = React.useState(false);
+
+    const OpenHandler = () => {
+        setOpen(true);
+    }
+    const CloseHandler = () => {
+        setOpen(false);
+    }
 
     return (
         <>
-            <Button sx={{ width: '300px', height: '100px' }} variant="contained" onClick={OpenHandler}>
-
-                <Typography sx={{ fontSize: '2rem', color: '#000000', textTransform: 'none' }} >{title}</Typography>
-
+            <Button sx={{ width: '300px', height: '100px',textTransform:'none' }} variant="contained" onClick={OpenHandler} color={color}>
+                <Typography variant="h6" >{title}</Typography>
             </Button>
             <Dialog open={open} onClose={CloseHandler} maxWidth='xl' >
                 <DialogTitle sx={{ fontSize: '2rem' }}>{title}</DialogTitle>
                 <DialogContent>
-                    {body}
+                    {children}
                 </DialogContent>
             </Dialog>
         </>
