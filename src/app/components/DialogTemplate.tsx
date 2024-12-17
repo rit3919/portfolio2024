@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 
 interface DialogProps {
     title: string,
-    color?: string,
+    color?: "primary" | "secondary" | undefined,
     children: React.ReactNode,//React18から明示的に指定する必要がある
 }
 
