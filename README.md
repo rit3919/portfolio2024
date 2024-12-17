@@ -1,5 +1,6 @@
 # RinTakagi's portfolio
 
+https://rit3919.github.io/portfolio2024/
 
 ## Update
 
