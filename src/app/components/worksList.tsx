@@ -1,6 +1,9 @@
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 
+import basePath from "../../../next.config.mjs";
+const BASE_PATH = basePath ? basePath : "";
+
 const works = [
     {
         name: 'PreSkate -仮想スケート体験システム-',
@@ -158,7 +161,7 @@ const works = [
                         画面例①：時間割表の切り替え
                     </Typography>
                     <Box>
-                        <Image src='/image/regeno/changeTable.gif' alt='changeTable' width={1000} height={300} style={{ pointerEvents: 'none', userSelect: 'none' }} />
+                        <Image src={`${BASE_PATH}/public/image/regeno/changeTable.gif`} alt='changeTable' width={1000} height={300} style={{ pointerEvents: 'none', userSelect: 'none' }} />
                     </Box>
                 </Box>
                 <Box sx={{ padding: '5vh 0 1vh 0' }}>
@@ -166,7 +169,7 @@ const works = [
                         画面例②：履修登録画面
                     </Typography>
                     <Box>
-                        <Image src='/image/regeno/reg.gif' alt='Search and Register' width={1000} height={300} style={{ pointerEvents: 'none', userSelect: 'none' }} />
+                        <Image src={`${BASE_PATH}/public/image/regeno/reg.gif`} alt='Search and Register' width={1000} height={300} style={{ pointerEvents: 'none', userSelect: 'none' }} />
                     </Box>
                 </Box>
             </Box>
