@@ -9,8 +9,8 @@ import About from './components/About';
 import Skills from './components/skill';
 import Works from './components/works';
 
-import basePath from "../../next.config.mjs";
-const BASE_PATH = basePath ? basePath : "";
+import nextConfig from "../../next.config.mjs";
+const BASE_PATH = nextConfig.basePath || "";
 
 
 // 色の設定
