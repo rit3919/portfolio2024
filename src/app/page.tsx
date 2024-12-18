@@ -50,7 +50,7 @@ export default function Home() {
             <Box sx={{ padding: '0 0 10vh 0', position: 'relative', height: '100vh', top: '30vh' }}>
                 <Box sx={{ position: 'relative', left: '3vw' }}>
                     <Image src={
-                        isDark ? `${BASE_PATH}/public/image/Logo/Rit_Logo_dark.png` : `${BASE_PATH}/public/image/Logo/Rit_Logo_light.png`
+                        isDark ? `${BASE_PATH}/image/Logo/Rit_Logo_dark.png` : `${BASE_PATH}/image/Logo/Rit_Logo_light.png`
                     } alt={isDark ? 'Dark Logo' : 'Light Logo'} width={300} height={150} style={{ pointerEvents: 'none', userSelect: 'none' }} />
                 </Box>
                 <Typography variant='h1' sx={{ userSelect: 'none', position: 'relative', left: '3vw' }}>Rin Takagi Portfolio</Typography>
